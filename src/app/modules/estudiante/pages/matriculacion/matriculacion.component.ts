@@ -96,7 +96,6 @@ export class MatriculacionComponent implements OnChanges {
       
   }
 
-
   ngOnInit() {
     this.validarMatriculacion();
     if (this.validarMatricula){
@@ -147,7 +146,6 @@ export class MatriculacionComponent implements OnChanges {
   ngOnChanges() {
 
   }
-
 
   onSelect(event: any) {
     this.mostrarHorario = true;
@@ -286,7 +284,6 @@ export class MatriculacionComponent implements OnChanges {
       this.horarioMatriculacion.push(horarioMatriculacion);
     }
 
-
     for (let j = 0; j < this.horarioMatriculacion.length; j++) {
       for (let k = 0; k < cursoHorarioProvicional.length; k++) {
         if (this.horarioMatriculacion[j].id_curso == cursoHorarioProvicional[k].curso_horario) {
@@ -373,8 +370,10 @@ export class MatriculacionComponent implements OnChanges {
 
     if(this.selected == '1'){
       this.nombreModulo = 'Módulo 1';
-    }else{
+    }else if (this.selected == '2'){
       this.nombreModulo = 'Módulo 2';
+    } else{
+      this.nombreModulo = 'Módulo 3'
     }
 
     if(this.promedio < 9){
@@ -390,7 +389,9 @@ export class MatriculacionComponent implements OnChanges {
     if(this.horarioMatriculado.length == 5 && this.selected == '1'){
       this.costoTotal = 300;        
     }else if(this.horarioMatriculado.length == 5 && this.selected == '2'){      
-      this.costoTotal = 400;      
+      this.costoTotal = 400;
+    }else if(this.horarioMatriculado.length == 5 && this.selected == '3'){      
+      this.costoTotal = 500;
     }else if(this.horarioMatriculado.length != 5){      
       this.costoTotal = this.costoUnitario*this.horarioMatriculado.length;      
     } 
@@ -418,32 +419,7 @@ export class MatriculacionComponent implements OnChanges {
 
   async finalizar(){
     let id = this.matricula_pagoMatricula;
-    let matricula = this.horarioMatriculado    
-    // await this.matriculacionService.agregarOrdenPagoMatriculas(
-    //   this.matricula_pagoMatricula,
-    //   this.nombreModulo,
-    //   this.horarioMatriculado.length,
-    //   this.costoTotal,
-    //   this.descuento,
-    //   this.totalDescuento)
-    //   .toPromise().then(respuesta =>{    
-    // }).catch(err =>{
-    //   console.error(err);
-    // });
-
-    // await this.matriculacionService.agregarMatricula(
-    //   this.datosCompletos[0].id_estudiante,
-    //   this.fechaActual)
-    //   .toPromise().then(respuesta =>{    
-    // }).catch(err =>{
-    //   console.error(err);
-    // });
-    // for(let i = 0;i<matricula.length;i++){
-    //   await this.matriculacionService.agregarItemMatriculas(matricula[i].id_curso,id).toPromise().then(respuesta =>{    
-    //   }).catch(err =>{
-    //     console.error(err);
-    //   });
-    // }    
+    let matricula = this.horarioMatriculado      
     const modalRef = this.modalService.open(GenerandoModalComponent, { centered: true, size: 'md', backdrop: 'static', keyboard: false });
   }
 
