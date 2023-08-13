@@ -1,0 +1,11 @@
+table td, table th {
+    text-align: center;
+  }
+th{
+    background-color: #192A51 !important;
+    color: white;
+    text-align: center;
+}
+mat-expansion-panel-header{
+    background-color: #E6E6E6 !important;
+}

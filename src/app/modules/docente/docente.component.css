@@ -1,0 +1,292 @@
+.banner {
+    background-image: url(../../../assets/img/profesores.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+}
+
+.banner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+h1,
+p,
+a {
+  line-height: normal;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25pt;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+
+h1:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  border-bottom: #85e3f0 solid 5px;
+}
+
+#botonGuardar {
+    border: 2px solid #20BCD1;
+    background-color: #20BCD1;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    height: 50px;
+}
+
+
+.cuerpo-empresas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+  
+  .contenido-empresas {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;    
+    width: 100%;
+  }
+  
+  .empresa {  
+    width: 500px;  
+    height: 300px;  
+    position: relative;
+    overflow: hidden;    
+    height: 50%;
+    text-align: center;
+    margin-top: 35px;
+  }
+  .empresa p{
+    text-align: justify;
+  }
+  .contenido-empresas img{
+    width: 400px;
+    height: 220px;
+    padding: auto;
+  }
+  .button {
+    margin: 0 !important;
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: #20BCD1;
+    color: white;
+    border: white;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .button2 {
+    margin: 0 !important;
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: #5c5f5f;
+    color: white;
+    border: white;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: 0.5s;
+    
+  }
+  
+  
+  
+  .button:not(hover) {
+    background-color: #20BCD1;
+    transition: 0.5s;
+  }
+  a {
+    margin: 0 !important;
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  a:hover {
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    transition: 0.5s;
+  }
+  
+  a:not(hover) {
+    background-color: transparent;
+    border: 2px solid black;
+    transition: 0.5s;
+  }
+
+@media only screen and (min-width:431px ) and (max-width: 768px) {
+        .banner {
+          height: 300px;
+        }
+        .banner-text {
+          top: 40%;
+        }
+        .cuerpo-empresas {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+        .contenido-empresas {
+          flex-direction: column;
+        }
+        .empresa {
+          width: 100%;
+          margin: 0;
+          text-align: center;
+        }
+        .jumbotron {
+          padding: 50px;
+        }
+        h1 {
+          margin-top: 30px;
+          position: relative;
+          display: inline-block;
+          font-weight: bold;
+          font-size: 15px;
+      }
+      
+      h2 {
+          font-size: 15px;
+          font-weight: normal;
+      
+      }
+      
+      h4 {
+          font-size: 14px;
+      
+      }
+      
+      h1::after {
+          content: "";
+          position: absolute;
+          left: 51%;
+          bottom: 0;
+          width: 51%;
+          height: 4px;
+          background-color: #20BCD1;
+          transform: translateX(-50%);
+      }
+      .contenido-empresas img{
+        width: 100%;
+        height: 150px;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      }
+      @media only screen and (max-width: 430px) {
+        .banner {
+          height: 300px;
+        }
+        .banner-text {
+          top: 40%;
+        }
+        .cuerpo-empresas {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+        .contenido-empresas {
+          flex-direction: column;
+        }
+        .empresa {
+          width: 100%;
+          margin: 0;
+          text-align: center;
+        }
+        .jumbotron {
+          padding: 50px;
+        }
+        h1 {
+          margin-top: 30px;
+          position: relative;
+          display: inline-block;
+          font-weight: bold;
+          font-size: 15px;
+      }
+      
+      h2 {
+          font-size: 15px;
+          font-weight: normal;
+      
+      }
+      
+      h4 {
+          font-size: 14px;
+      
+      }
+      
+      h1::after {
+          content: "";
+          position: absolute;
+          left: 51%;
+          bottom: 0;
+          width: 51%;
+          height: 4px;
+          background-color: #20BCD1;
+          transform: translateX(-50%);
+      }
+      .contenido-empresas img{
+        width: 100%;
+        height: 150px;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        #botonGuardar {
+          border: 2px solid #20BCD1;
+          background-color: #20BCD1;
+          color: rgb(255, 255, 255);
+          font-size: 10px;
+          height: 30px;
+      }
+      }

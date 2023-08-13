@@ -1,0 +1,159 @@
+.lineaTitulo {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.lineaTitulo::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #20BCD1;
+    transform: translateX(-50%);
+}
+
+.contenido {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.desplegado {
+    display: block;
+    margin-top: 10px;
+}
+
+.desplegado2 {
+    border: 0px;
+}
+
+#botonActividad {
+    background-color: black;
+}
+
+#botonActividad:hover {
+    background-color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+
+}
+
+th {
+    background-color: black;
+    color: white;
+} 
+
+.texto-negrita {
+    font-weight: bold;
+}
+
+.icon-display {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.custom-input {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .input-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-right: 10px;
+    background-color: #f9f9f9;
+    padding: 0 5px;
+  }
+  
+  .input-field {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  .custom-input input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  text-align: right; /* Alinea el texto del input a la derecha */
+  }
+  
+  .input-label {
+  margin-right: 10px;
+  }
+  
+  .input-label,
+  .form-control {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  }
+  
+  .form-control {
+  border: none;
+  flex: 1;
+  text-align: right;
+  }
+  
+  .input-label {
+  margin-left: auto;
+  }
+  
+  .input-label-style {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  
+  @media (min-width: 768px) {
+    .custom-select {
+      max-width: none;
+    }
+  
+    .custom-input {
+      max-width: none;
+    }
+  }
+
+  #botonGuardar {
+    border: 2px solid black;
+    background-color: black;
+    color:  white;
+}
+
+#botonCancelar {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+}
+
+#botonGuardar:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+#botonCancelar:hover {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}

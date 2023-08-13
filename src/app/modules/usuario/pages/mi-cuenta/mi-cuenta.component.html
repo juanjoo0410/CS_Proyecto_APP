@@ -1,0 +1,7 @@
+<div class="contenedor">
+    <h1> MI CUENTA </h1>
+    <app-eperfil *ngIf="usuario.rol_usuario === 1"></app-eperfil>
+    <app-dperfil *ngIf="usuario.rol_usuario === 2"></app-dperfil>
+    <app-admin-perfil *ngIf="usuario.rol_usuario === 3"></app-admin-perfil>
+    <button mat-button (click)="cambiar()">Cambiar Contraseña</button>
+</div>

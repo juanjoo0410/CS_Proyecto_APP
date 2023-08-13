@@ -1,0 +1,259 @@
+.container {
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25pt;
+  margin-bottom: 5px;
+  position: relative;
+  padding-bottom: 20px;
+  margin-top: 40px;
+}
+
+h1:before {
+  content: "";
+  position: absolute;
+  width: 14%;
+  bottom: 0;
+  left: 42%;
+  right: 42%;
+  border-bottom: #85e3f0 solid 5px;
+}
+
+.select {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: F0F0F0 !important;
+  margin-top: 20px;
+}
+
+
+th {
+  background-color: black !important;
+  color: white;
+  text-align: center;
+}
+
+tr {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: #f2f2f2;
+
+  /* Color de fondo gris */
+}
+
+.mat-elevation-z8 {
+  flex-direction: column;
+  border-right: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  text-align: center;
+}
+
+.mat-elevation-z9 {
+  flex-direction: column;
+  border-right: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  text-align: center;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+button {
+  padding: 20px !important;
+  width: 150px !important;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;  
+  height: 50px;
+  font-size: 16px;  
+  text-align: center;
+  background-color: black !important;
+  color: white !important;
+}
+
+
+.add {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.select {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 50px;
+  padding: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  background-color: F0F0F0 !important;
+  margin-top: 50px;
+
+
+}
+
+
+th {
+  background-color: black !important;
+  color: white;
+  text-align: center;
+
+
+}
+
+tr:nth-child(even) td {
+  background-color: #f2f2f2;
+  /* Color de fondo gris */
+}
+
+.mat-elevation-z8 {
+  width: 1000px;
+  flex-direction: column;
+  height: 1050px;
+  border-right: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  text-align: center;
+
+
+}
+
+
+/*formulario tarjeta*/
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 80px;
+  width: 900px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+select {
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="month"] {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+/*formulario orden*/
+
+.orden {
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+}
+
+td col-3 {
+  background-color: #f0f0f0
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+}
+
+thead th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+tbody td {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+
+tfoot td {
+  text-align: right;
+  font-weight: bold;
+  padding: 5px;
+}
+
+tfoot td:first-child {
+  text-align: left;
+}
+
+tfoot tr:last-child td {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+}
+
+.pago {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+}
+
+.orden_pago {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 30px;
+  width: 300px;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+

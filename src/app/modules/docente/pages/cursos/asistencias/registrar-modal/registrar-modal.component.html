@@ -1,0 +1,23 @@
+<div class="modal-body" id="myModal">
+    <div class="mx-4 mt-5 text-center">
+        <h2 class="descripcion texto-negrita" *ngIf="cargando">Registrando Asistencias</h2>
+
+        <div class="d-flex justify-content-center my-4">
+            <mat-icon *ngIf="!cargando" class="icon-display">check_circle</mat-icon>
+            <div *ngIf="cargando" class="spinner"></div>
+        </div>
+
+        <h2 class="descripcion" *ngIf="!cargando">ÉXITO!</h2>
+        <h2 class="descripcion" *ngIf="cargando">Registrando..</h2>
+
+        <p class="descripcion" *ngIf="!cargando">Asistencias registradas.</p>
+        <p class="descripcion" *ngIf="cargando">Espere un momento por favor...</p>
+
+        <p class="mensaje text-muted" *ngIf="cargando">(No salga de esta página)</p>
+        
+        <div class="d-flex justify-content-center pt-4 pb-4">
+            <button *ngIf="!cargando" type="submit" id="botonGuardar" class="btn btn-primary mx-1 rounded-0" (click)="activeModal.close()"
+                type="submit" form="addUserForm" >Entendido</button>
+        </div>
+    </div>
+</div>

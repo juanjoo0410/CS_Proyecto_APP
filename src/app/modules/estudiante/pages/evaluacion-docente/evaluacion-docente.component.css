@@ -1,0 +1,183 @@
+.contenedor {
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25pt;
+  margin-bottom: 5px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+h1:before {
+  content: "";
+  position: absolute;
+  width: 14%;
+  bottom: 0;
+  left: 42%;
+  right: 42%;
+  border-bottom: #85e3f0 solid 5px;
+}
+.nombreDocente{
+    font-size: large;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th{
+  background-color: black !important;
+  color: white;
+  text-align: center;
+  padding:20px;
+
+}
+
+.mat-elevation-z8 {
+    width: 1000px;
+    flex-direction: column;
+    height: 1050px;
+    border-right: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    margin-top: 50px;
+    overflow-x: auto;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  button{
+    padding: 20px !important;
+    width: 150px !important;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;  
+    height: 50px;
+    font-size: 16px;  
+    text-align: center;
+    background-color: black !important;
+    color: white !important;
+  }
+
+  .custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+  
+  .select-header .filtrar-por {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .header-left span:first-child {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-right: 10px;
+  }
+  
+  .header-right {
+    margin-left: 10px;
+    flex: 2;
+    text-align: right;
+  }
+  
+  .header-right span {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .options {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+  }
+  
+  .option {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .option:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .arrow-icon {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: "";
+    display: inline-block;
+    height: 0.45em;
+    width: 0.45em;
+    margin-right: 10px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+  }
+  
+  @media (min-width: 768px) {
+    .custom-select {
+      max-width: none;
+    }
+  
+    .custom-input {
+      max-width: none;
+    }
+  }
+  
+  

@@ -1,0 +1,58 @@
+.modal-body {
+    background-color: white;
+}
+
+#botonGuardar {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+#botonCancelar {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+#botonGuardar:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+#botonCancelar:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #20BCD1;
+    transform: translateX(-50%);
+}
+
+.texto-negrita {
+    font-weight: bold;
+}
+
+.texto-normal {
+    font-weight: normal;
+}
+
+.descripcion {
+    line-height : 30px;
+
+
+}

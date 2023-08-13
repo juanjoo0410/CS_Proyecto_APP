@@ -1,0 +1,131 @@
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Datos personales</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="p-2">
+            <div class="d-flex justify-content-between align-items-center mb-2 mt-2">
+              <h3 class="text-right">
+                <b>Nombre:</b> {{ dataSource?.nombres_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Apellido:</b> {{ dataSource?.apellidos_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Cedula:</b> {{ dataSource?.cedula_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Fecha de Nacimiento:</b>
+                {{ dataSource?.fechaNacimiento_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Edad:</b> {{ dataSource?.edad_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Dirección:</b> {{ dataSource?.direccion_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Teléfono:</b> {{ dataSource?.telefono_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Email:</b> {{ dataSource?.email_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Nivel de educación:</b>
+                {{ dataSource?.nivelEducacion_estudiante }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Promedio anterior:</b>
+                {{ dataSource?.promedioAnterior_estudiante }}
+              </h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Datos de la cuenta</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="p-2 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3>
+                <b>Nombre de usuario:</b> {{ dataSource?.nombre_usuario }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3><b>Contraseña:</b> {{ dataSource?.contrasena_usuario }}</h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="p-2"></div>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Ordenes de pago</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="table-responsive">
+            <table class="table thead">
+              <thead>
+                <tr class="align-middle">
+                  <th scope="col">No.</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Desc.</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>{{ dataSourceOrdenMatricula?.fecha_matricula }}</td>
+                    <td>{{ dataSourceOrdenMatricula?.item_pagoMatricula }}</td>
+                    <td>{{ dataSourceOrdenMatricula?.cantidad_pagoMatricula }}</td>
+                    <td>$ {{ dataSourceOrdenMatricula?.subtotal_pagoMatricula }}</td>
+                    <td>$ {{ dataSourceOrdenMatricula?.descuento_pagoMatricula }}</td>
+                    <td>$ {{ dataSourceOrdenMatricula?.total_pagoMatricula }}</td>
+                  </tr>
+              </tbody>
+            </table>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+<br><br>

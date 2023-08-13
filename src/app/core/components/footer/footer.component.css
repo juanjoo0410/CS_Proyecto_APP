@@ -1,0 +1,7 @@
+.footer {
+  background-color: black;
+  height: 80px; /* altura del footer */
+  margin-top: auto; /* empujar el footer hacia abajo */
+  text-align: center;
+  width: 100%;
+}

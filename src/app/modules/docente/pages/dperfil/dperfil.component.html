@@ -1,0 +1,185 @@
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Datos personales</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="p-2">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Nombre:</b> {{ dataSource?.nombres_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Apellido:</b> {{ dataSource?.apellidos_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Cedula:</b> {{ dataSource?.cedula_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Fecha de Nacimiento:</b>
+                {{ dataSource?.fechaNacimiento_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Edad:</b> {{ dataSource?.edad_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Dirección:</b> {{ dataSource?.direccion_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Teléfono:</b> {{ dataSource?.telefono_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Email:</b> {{ dataSource?.email_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Nivel de educación:</b>
+                {{ dataSource?.nivelEducacion_docente }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Título:</b> {{ dataSource?.titulo_docente }}
+              </h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Datos contrato</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="p-2">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Fecha de contrato:</b>
+                {{ dataSourceContratoDocente?.fecha_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Ciclo de contrato:</b>
+                {{ dataSourceContratoDocente?.ciclo_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Nombramiento de contrato:</b>
+                {{ dataSourceContratoDocente?.nombramiento_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Especialidad de contrato:</b>
+                {{ dataSourceContratoDocente?.especialidad_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Tipo de contrato:</b>
+                {{ dataSourceContratoDocente?.tipo_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Jornada de contrato:</b>
+                {{ dataSourceContratoDocente?.jornada_contrato }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-right">
+                <b>Sueldo de contrato:</b>
+                {{ dataSourceContratoDocente?.sueldo_contrato }}
+              </h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Datos de la cuenta</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="p-2">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3>
+                <b>Nombre de usuario:</b> {{ dataSource?.nombre_usuario }}
+              </h3>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3><b>Contraseña:</b> {{ dataSource?.contrasena_usuario }}</h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="p-2"></div>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title><b>Ordenes de Pago</b></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <div class="table-responsive">
+            <table class="table thead">
+              <thead>
+                <tr class="bg-primary">
+                  <th scope="col">No.</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Sueldo</th>
+                  <th scope="col">Faltas</th>
+                  <th scope="col">Descuento</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">1</td>
+                  <td>{{ dataSourcePagoDelDocente?.fecha_pagoDocente }}</td>
+                  <td>$ {{ dataSourcePagoDelDocente?.sueldo_contrato }}</td>
+                  <td>{{ dataSourcePagoDelDocente?.faltas_pagoDocente }}</td>
+                  <td>$ {{ dataSourcePagoDelDocente?.descuento_pagoDocente }}</td>
+                  <td>$ {{ dataSourcePagoDelDocente?.total_pagoDocente }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<br><br>

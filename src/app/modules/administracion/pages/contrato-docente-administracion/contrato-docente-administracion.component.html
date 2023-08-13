@@ -1,0 +1,55 @@
+<div class="container" style="padding: 30px;">
+  <div style="margin: auto; text-align: center;">
+    <h1 style="font-weight: bold;"> NUEVO CONTRATO </h1>
+    <h2 style="text-align: center;color: rgb(98, 98, 98);">
+      {{nombre_docente}}
+    </h2>
+  </div>
+  <div style="font-size: 14px;  ">
+    <form class="formContrato" [formGroup]="formulario">
+      <div style="width: 90%;text-align: center; margin: auto;">
+        <br>
+        <label> Nombramiento: </label>
+        <br>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button style="margin-left: 16px;" value="Si">Si</mat-radio-button>
+          <mat-radio-button style="margin-left: 16px;" value="No">No</mat-radio-button>
+        </mat-radio-group>
+        <br><br>
+        <label> Especialidad a fin: </label>
+        <br><br>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button style="margin-left: 16px;" value="Si">Si</mat-radio-button>
+          <mat-radio-button style="margin-left: 16px;" value="No">No</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br><br>
+        <mat-form-field appearance="fill" class="campos-field">
+          <mat-label>Jornada:</mat-label>
+          <mat-select>
+            <mat-option>Seleccione</mat-option>
+            <mat-option *ngFor="let filtro of filtro" [value]="filtro">{{filtro}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="campos-field">
+          <mat-label>Tipo:</mat-label>
+          <mat-select>
+            <mat-option>Seleccione</mat-option>
+            <mat-option *ngFor="let tipo of tipo" [value]="tipo">{{tipo}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+      </div>
+      <mat-dialog-actions class="mt-1" style="justify-content: center;">
+        <button type="submit" style="background-color: black; color: white;" mat-raised-button (click)="enviar()">
+          GUARDAR
+        </button>
+        <button style="background-color: black; color: white;" mat-raised-button
+          (click)="cerrar()">
+          CANCELAR
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </div>
+</div>

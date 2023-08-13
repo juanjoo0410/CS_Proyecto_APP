@@ -1,0 +1,36 @@
+<div class="contenedor">
+<h1>Cambiar Contraseña</h1>
+<form [formGroup]="cambiar">
+    <mat-form-field class="campos-field" style="grid-column: span 2;">
+      <mat-label>Contraseña actual</mat-label>
+      <input matInput formControlName="contraseña" type="password" placeholder="Contraseña actual" required>
+      <mat-error *ngIf="cambiar.controls['contraseña'].hasError('required')">Contraseña es requerida.</mat-error>
+      <mat-error *ngIf="cambiar.controls['contraseña'].hasError('minlength')">Contraseña debe tener minimo 8</mat-error>
+      <mat-error *ngIf="cambiar.controls['contraseña'].hasError('maxlength')">Contraseña debe tener máximo 10
+        caracteres.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="campos-field" style="grid-column: span 2;">
+      <mat-label>Nueva Contraseña </mat-label>
+      <input matInput formControlName="ncontraseña" type="password" placeholder="Nueva contraseña" required>
+      <mat-error *ngIf="cambiar.controls['ncontraseña'].hasError('required')">Contraseña es requerida.</mat-error>
+          <mat-error *ngIf="cambiar.controls['ncontraseña'].hasError('minlength')">Contraseña debe tener minimo 8
+          </mat-error>
+          <mat-error *ngIf="cambiar.controls['ncontraseña'].hasError('maxlength')">Contraseña debe tener máximo 10
+            caracteres.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="campos-field"style="grid-column: span 2;" >
+      <mat-label>Verifique su nueva contraseña</mat-label>
+      <input matInput formControlName="vcontraseña" type="password" placeholder="Verifique su contraseña" required>
+      <mat-error *ngIf="cambiar.controls['vcontraseña'].hasError('required')">Contraseña es requerida.</mat-error>
+      <mat-error *ngIf="cambiar.controls['vcontraseña'].hasError('minlength')">Contraseña debe tener minimo 8
+      </mat-error>
+      <mat-error *ngIf="cambiar.controls['vcontraseña'].hasError('maxlength')">Contraseña debe tener máximo 10
+        caracteres.</mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="arePasswordsEqual() ">Las contraseñas no coinciden.</mat-error>
+
+    <div class="acciones">
+      <button mat-raised-button [disabled]="!cambiar.valid || arePasswordsEqual()">Aceptar</button>
+      <button mat-raised-button class="mx-2" (click)="cancelar()">Cancelar</button>
+    </div>
+    </form>

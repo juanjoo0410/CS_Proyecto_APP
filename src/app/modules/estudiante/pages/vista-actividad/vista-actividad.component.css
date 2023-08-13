@@ -1,0 +1,64 @@
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+h1,
+p,
+a {
+    line-height: normal;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25pt;
+    margin-bottom: 5px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+h1:before {
+    content: "";
+    position: absolute;
+    width: 36%;
+    bottom: 0;
+    left: 32%;
+    right: 32%;
+    border-bottom: #85e3f0 solid 5px;
+}
+td{
+    padding: 20px;
+}
+button{
+    background-color: #D7D7D7;
+    border: 4px;
+    width: 130px;
+    height: 35px;
+}
+
+.Enviada{
+    background-color: #188754;
+    color: white;
+    font-weight: bolder;
+}
+.NoEnviada{
+    background-color: #373737;
+    color: white;
+    font-weight: bolder;
+}
+.Pendiente{
+    background-color: #DBD700;
+    color: white;
+    font-weight: bolder;
+}
+
+
+.NoEnviada, .Enviada, .Pendiente{
+    border: black !important;
+  }

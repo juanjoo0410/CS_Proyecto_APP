@@ -1,0 +1,67 @@
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    box-sizing: inherit;
+}
+
+h1,
+p,
+a {
+    line-height: normal;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25pt;
+    margin-bottom: 5px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+h1:before {
+    content: "";
+    position: absolute;
+    width: 14%;
+    bottom: 0;
+    left: 42%;
+    right: 42%;
+    border-bottom: #85e3f0 solid 5px;
+}
+th {
+    background-color: black !important;
+    color: white;
+    font-weight: 500;
+}
+
+.contenido-encabezado h1 {
+    font-size: 25pt;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.aprobado {
+    background-color: #188754;
+    color: white;
+  }
+  
+  .reprobado {
+    background-color: #DC3645;
+    color: white;
+  }
+
+  table td, table th {
+    text-align: center;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+  }	

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="container rounded bg-white mt-2 mb-2">
+        <div class="contenido-encabezado">
+            <section class="cuerpo-titulo">
+                <h1>ADMINISTRACIÓN</h1>
+            </section>
+        </div>
+        <div class="contenido-central">
+            <div class="central-izq">
+                <div (click)="irDocentes()" class="central-izq-up">
+                    <div>
+                        <h2>{{totalDocentes}}</h2>
+                        <h3>DOCENTES</h3>
+                    </div>
+                    <div>
+                        <img width="80px" src="./../../../assets/imagen/docente-blanco.png" alt="iconoDocente">
+                    </div>
+                </div>
+                <div (click)="irEstudiantes()" class="central-izq-dwn">
+                    <div>
+                        <h2>{{totalEstudiantes}}</h2>
+                        <h3>ESTUDIANTES</h3>
+                    </div>
+                    <div>
+                        <img width="80px" src="./../../../assets/imagen/estudiante-blanco.png" alt="iconoEstudiante">
+                    </div>
+                </div>
+            </div>
+            <div class="central-der">
+                <div class="central-der-up">
+                    <div class="item" *ngFor="let element of datosDocentes">
+                        <h2 style="color:black"> {{element.promedio_docente}} </h2>
+                        <h4 style="color:black"> {{element.nombrescompletos_docente}} </h4>
+                    </div>
+                </div>
+                <div class="central-der-dwn">
+                    <div class="item" *ngFor="let element of datosEstudiantes">
+                        <h2 style="color:black"> {{element.promedio_estudiante}} </h2>
+                        <h4 style="color:black"> {{element.nombrescompletos_estudiante}} </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

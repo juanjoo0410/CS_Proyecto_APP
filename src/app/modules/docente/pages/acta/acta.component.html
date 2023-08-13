@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="d-flex container">
+        <div class="pt-5 text-center align.items.justify-content-center mx-auto text-center pb-3">
+            <h1 class="lineaTitulo" style="width: fit-content;">ACTA DE CALIFICACIONES</h1>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-between mx-5">
+        <div class="col-5">
+            <div class="custom-select mb-3">
+                <div class="select-header" (click)="toggleSelect()">
+                    <div class="header-left">
+                        <span class="input-label filtrar-por">Curso:</span>
+                    </div>
+                    <div class="header-right">
+                        <span>{{ selectedOption }}</span><br>
+                        <span>{{ selectedOption2 }}</span>
+                        <i class="arrow-icon" [ngClass]="{'up': isOpen, 'down': !isOpen}"></i>
+                    </div>
+                </div>
+                <div class="options" *ngIf="isOpen">
+                    <div class="option" *ngFor="let curso of cursos" (click)="selectOption(curso)">
+                        {{ curso.nombre_materia}} - {{curso.nombre_paralelo}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" id="botonGuardar" class="btn btn-primary mx-1 rounded-0" type="submit" (click)=" openGenerar()" [disabled]="selectedOption2 == 'Curso'"
+                form="addUserForm"><span class="px-4" >Generar acta</span></button>
+        </div>
+    </div>
+<div class="table-responsive py-5" *ngIf="acta">
+    <table class="table table-hover table-bordered mx-auto">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" class="col-1 text-center align-middle">#</th>
+                <th scope="col" class="col-5 align-middle">Nombre</th>
+                <th scope="col" class="col-1 text-center align-middle">Nota</th>
+                <th scope="col" class="col-1 text-center align-middle">Asistencia</th>
+                <th scope="col" class="col-2 text-center align-middle">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let acta of actas; let indice = index">
+                <tr>
+                    <td scope="row" class="text-center align-middle"></td>
+                    <td class="align-middle">{{acta.nombresCompletos_estudiante}}</td>
+                    <td class="align-middle text-center">{{acta.promedioCalificaciones_itemActa}}</td>
+                    <td class="align-middle text-center">{{acta.promedioAsistencias_itemActa}}%</td>
+                    <td class="text-center align-middle"><span
+                        class="badge badge-lg rounded-0 px-4"
+                        [ngClass]="{'aprobado': acta.estado_itemActa === 'APROBADO', 'reprobado': acta.estado_itemActa === 'REPROBADO'}">
+                        {{acta.estado_itemActa}}
+                      </span></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+</div>

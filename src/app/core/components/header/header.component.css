@@ -1,0 +1,116 @@
+.navbar {
+    background-color: black;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.navbar.border-bottom {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.fondoNavBar {
+    background-color: black;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.nav-item.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu,
+  .nav-item.dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-item {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+    cursor: pointer;
+
+  }
+  
+  .nav-item:hover {
+    background-color: gray;
+    color: white;
+  }
+  
+  .nav-item::after {
+    display: none;
+  }
+
+  .dropdown-menu {
+    border-radius: 0;
+    border: transparent;
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  .dropdown-item {
+    height: 50px;
+  }
+
+  .bordeMenu {
+    position: relative;
+  }
+  .bordeMenu::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.856);
+  }
+
+  .dropdown-item {
+    height: 50px; /* Cambiar el valor según el alto deseado */
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    width: 250px;
+
+
+  }
+  
+  .dropdown-item:hover {
+    background-color: #20BCD1;
+    
+    color: white;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown-menu-right {
+    left: auto !important;
+    right: 0 !important;
+  }

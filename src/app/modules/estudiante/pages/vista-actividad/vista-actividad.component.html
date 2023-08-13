@@ -1,0 +1,119 @@
+<div class="container" style="width: 60%;" *ngIf="presentar">
+  <div class="d-flex container">
+    <div class="pt-5 text-center align.items.justify-content-center mx-auto text-center">
+      <h1 style="width: fit-content">{{ datosEntrega?.tipo_actividad }}
+      </h1>
+      <br />
+    </div>
+  </div>
+  <table class="table table-hover table-bordered px-auto">
+    <tbody>
+      <ng-container>
+        <tr>
+          <td>
+            <h2>{{ datosEntrega?.nombre_actividad }}</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Publicación:</b> {{ datosEntrega?.fechaPublicacion_actividad }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Vencimiento:</b> {{ datosEntrega?.fechaVencimiento_actividad }}
+          </td>
+        </tr>
+        <hr />
+        <tr>
+          <td>{{ datosEntrega?.descripcion_actividad }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <hr />
+  <div class="container-fluid">
+    <div class="row">
+      <table class="table table-hover table-bordered px-auto">
+        <thead class="table">
+          <tr>
+            <th scope="col" class="col-md-2">ENTREGA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container>
+            <tr>
+              <td><b>Estado</b></td>
+              <td
+                [ngClass]="{
+                  NoEnviada: datosEntrega?.estado_entrega === 'No enviada',
+                  Enviada: datosEntrega?.estado_entrega === 'Enviada',
+                  Pendiente: datosEntrega?.estado_entrega === 'Pendiente'
+                }"
+              >
+                {{ datosEntrega?.estado_entrega }}
+              </td>
+            </tr>
+            <tr>
+              <td><b>Calificación</b></td>
+              <td>{{ datosEntrega?.calificacion_entrega }}</td>
+            </tr>
+            <tr>
+              <td><b>Archivo</b></td>
+              <td>{{ datosEntrega?.archivo_entrega }}</td>
+            </tr>
+            <tr>
+              <td><b>Ultima modificación</b></td>
+              <td>{{ datosEntrega?.fechaModificacion_entrega }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <button (click)="regresar()">Regresar</button>
+      <button (click)="editarEntrega()" style="margin-left: 10px">
+        Editar Entrega
+      </button>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div *ngIf="!presentar">
+  <div class="container-fluid">
+    <div
+      class="pt-5 text-center align.items.justify-content-left mx-auto text-center"
+    >
+      <h2><b>EDITAR ENTREGA</b></h2>
+    </div>
+    <div class="container text-center" style="width: 50%;">
+      <form [formGroup]="entregaForm" (ngSubmit)="guardar($event)" novalidate>
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Tamaño máximo de archivos 5MB</label
+          ><br />
+          <br />
+          <input
+            type="file"
+            class="form-control pt-5 text-center align.items.justify-content-left mx-auto text-center"
+            id="exampleFormControlFile1"
+            formControlName="archivo_entrega"
+            style="width: 60%"
+            value="archivo_entrega"
+          />
+        </div>
+        <br />
+        <div
+          class="pt-5 text-center align.items.justify-content-left mx-auto text-center"
+        >
+          <button style="margin-right: 5px">Guardar</button>
+          <button (click)="cancelarAccion()" style="margin-left: 5px">Regresar</button>
+          <br />
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <br /><br />
+</div>

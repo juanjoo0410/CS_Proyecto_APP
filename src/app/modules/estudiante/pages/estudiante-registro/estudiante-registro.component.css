@@ -1,0 +1,82 @@
+.container{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+}
+#contenedorF{
+    background-color: #EAEAEA;
+}
+.form-group{
+    padding: 5px;
+}
+.form-control{
+    width: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+}
+.nombreC{
+    font-weight: bold;
+    width: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.button {
+    margin-right: 5px;
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: #20BCD1;
+    color: white;
+    border: white;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: transparent;
+    border: 2px solid #20BCD1;
+    color: #20BCD1;
+    transition: 0.5s;
+  }
+  
+  .button:not(hover) {
+    background-color: #20BCD1;
+    transition: 0.5s;
+  }
+
+  .button2 {
+    margin-left: 5px;
+    align-self: center;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: white;
+    color: #20BCD1;
+    border: #20BCD1;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .button2:hover {
+    background-color: #20BCD1;
+    border: 2px solid white;
+    color: white;
+    transition: 0.5s;
+    
+  }
+  
+  .button2:not(hover) {
+    background-color: white;
+    border: 2px solid #20BCD1;
+
+    transition: 0.5s;
+  }

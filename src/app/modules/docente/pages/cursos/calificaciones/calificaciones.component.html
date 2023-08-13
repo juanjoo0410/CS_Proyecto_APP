@@ -1,0 +1,91 @@
+<div class="d-flex container">
+    <div class="pt-5 text-center align.items.justify-content-center mx-auto text-center pb-2">
+        <h1 class="lineaTitulo texto-negrita" style="width: fit-content;">CALIFICACIONES</h1>
+    </div>
+</div>
+<div class="row d-flex justify-content-between">
+    <div class="col-3">
+        <div class="custom-select mb-3">
+            <div class="select-header" (click)="toggleSelect()">
+                <div class="header-left">
+                    <span class="input-label filtrar-por">Filtrar por:</span>
+                </div>
+                <div class="header-right">
+                    <span>{{ selectedOption }}</span>
+                    <i class="arrow-icon" [ngClass]="{'up': isOpen, 'down': !isOpen}"></i>
+                </div>
+            </div>
+            <div class="options" *ngIf="isOpen">
+                <div class="option" *ngFor="let option of options" (click)="selectOption(option)">
+                    {{ option.label }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="custom-select mb-3">
+            <div class="select-header" (click)="toggleSelect2()">
+                <div class="header-left">
+                    <span class="input-label filtrar-por">Filtrar por:</span>
+                </div>
+                <div class="header-right">
+                    <span>{{ selectedOption2 }}</span>
+                    <i class="arrow-icon" [ngClass]="{'up': isOpen2, 'down': !isOpen2}"></i>
+                </div>
+            </div>
+            <div class="options" *ngIf="isOpen2">
+                <ng-container *ngIf="selectedOption=='Actividad'; else participantesOption">
+                  <div class="option" *ngFor="let actividad of actividades" (click)="selectOption2(actividad.nombre_actividad)">
+                    {{ actividad.nombre_actividad }}
+                  </div>
+                </ng-container>
+                <ng-template #participantesOption>
+                  <div class="option" *ngFor="let participante of participantes" (click)="selectOption2(participante.nombrescompletos_participante)">
+                    {{ participante.nombrescompletos_participante }}
+                  </div>
+                </ng-template>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="table-responsive pb-5">
+    <table class="table table-hover table-bordered mx-auto">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" class="col-1 text-center align-middle">#</th>
+                <th scope="col" class="col-5 align-middle">Actividad</th>
+                <th scope="col" class="col-2 text-center align-middle">Estudiante</th>
+                <th scope="col" class="col-1 text-center align-middle">Estado</th>
+                <th scope="col" class="col-1 text-center align-middle">Entrega</th>
+                <th scope="col" class="col-1 text-center align-middle">Calificación</th>
+                <th scope="col" class="col-1 text-center align-middle">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let entrega of (entregas ? filtrar() : []); let indice = index">
+                <tr>
+                  <td scope="row" class="text-center align-middle">{{indice+1}}</td>
+                  <td class="align-middle">{{getActividad(entrega.actividad_entrega).nombre_actividad}}</td>
+                  <td class="align-middle text-center">{{getEstudiante(entrega.estudiante_entrega).nombrescompletos_participante}}</td>
+                  <td class="align-middle text-center"><span class="badge bg-secondary badge-lg rounded-0">{{entrega.estado_entrega}}</span></td>
+                  <td class="text-center align-middle"><i class="fa fa-download" style="font-size:24px"></i></td>
+                  <td class="text-center align-middle">
+                    <p *ngIf="editarIndex !== indice">{{entrega.calificacion_entrega}}</p>
+                    <input *ngIf="editarIndex === indice" type="text" class="form-control text-center" id="usr" [(ngModel)]="calificacion" value="{{entrega.calificacion_entrega}}">
+                  </td>
+                  <td class="text-center align-middle">
+                    <a type="button" class="mx-2" *ngIf="editarIndex !== indice" (click)="cambiarEditarIndex(indice); calificacion = entrega.calificacion_entrega">
+                      <mat-icon>edit</mat-icon>
+                    </a>
+                    <a type="button" class="mx-2" *ngIf="editarIndex === indice" (click)="calificarEntrega(entrega.actividad_entrega, entrega.estudiante_entrega, calificacion)">
+                      <mat-icon>check</mat-icon>
+                    </a>
+                    <a type="button" class="mx-2" *ngIf="editarIndex === indice" (click)="cambiarEditarIndex(null)">
+                      <mat-icon>close</mat-icon>
+                    </a>
+                  </td>
+                </tr>
+              </ng-container>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,58 @@
+<br><br>
+<div class="container rounded bg-white mt-2 mb-2">
+  <div class="contenido-encabezado">
+    <section class="cuerpo-titulo">
+      <h1>ACTA DE CALIFICACIONES</h1>
+    </section>
+  </div>
+  <br>
+</div>
+<div class="container mb-4">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="col-md-2">Materia</th>
+          <th scope="col" class="col-md-2">Paralelo</th>
+          <th scope="col" class="col-md-2">Modulo</th>
+          <th scope="col" class="col-md-2">Promedio de calificaciones</th>
+          <th scope="col" class="col-md-2">Promedio de asistencias</th>
+          <th scope="col" class="col-md-2" style="width: 4%">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="dataSource.length > 0; else noData">
+          <ng-container *ngFor="let actividades of dataSource">
+            <tr>
+              <td class="align-middle">{{ actividades.nombre_materia }}</td>
+              <td class="align-middle">{{ actividades.nombre_paralelo }}</td>
+              <td class="align-middle">{{ actividades.modulo_materia }}</td>
+              <td class="align-middle">
+                {{ actividades.promedioCalificaciones_itemActa }}
+              </td>
+              <td class="align-middle">
+                {{ actividades.promedioAsistencias_itemActa }}
+              </td>
+              <td
+                class="align-middle"
+                [ngClass]="{
+                  aprobado: actividades.estado_itemActa === 'APROBADO',
+                  reprobado: actividades.estado_itemActa === 'REPROBADO'
+                }"
+              >
+                {{ actividades.estado_itemActa }}
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+        <ng-template #noData>
+          <tr>
+            <td colspan="6" class="text-center">
+              No se encontraron resultados
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>

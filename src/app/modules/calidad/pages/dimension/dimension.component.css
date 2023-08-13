@@ -1,0 +1,105 @@
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    box-sizing: inherit;
+}
+
+h1,
+p,
+a {
+    line-height: normal;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25pt;
+    position: relative;
+    padding-bottom: 20px;
+
+}
+
+
+h1:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    border-bottom: #85e3f0 solid 5px;
+}
+
+.quality-results {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.quality-results h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.quality-results table {
+    min-width: 1000px;
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.quality-results th,
+.quality-results td {
+    padding: 20px;
+    border: 1px solid #ccc;text-align: center;
+}
+
+.quality-results th {
+    background-color: #192A51;
+    text-align: center;
+    font-size: 15pt;
+    color: white;
+    padding: 30px;
+}
+
+.quality-results tr:nth-child(even) {
+    background-color: #f5f5f5;text-align: center;
+}
+
+.quality-results tr:hover {
+    background-color: #ddd;text-align: center;
+}
+
+.quality-results .chart-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.quality-results .summary {
+  
+    text-align: center;
+}
+
+td,
+p {
+    font-size: 15pt;
+        line-height: 2;
+}
+
+p {
+    font-size: 15pt;
+    background-color: #192A51;
+    color: white;
+    padding: 60px;
+    margin-bottom: 80px;
+}

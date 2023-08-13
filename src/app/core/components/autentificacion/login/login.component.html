@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="boton">
+        <button (click)="cancelar()" class="cerrar">
+            <i class="bi bi-x-square h3"></i>
+        </button>
+    </div>
+    <div class="contenedor">
+        <img src="../../../assets/img/login.png" style="height: 150px">
+    </div>
+    <div class="card-body">
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="formulario">  
+            <h1>INICIAR SESIÓN</h1>   
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput type="email" formControlName="email"/>
+                <mat-error *ngIf="formLogin.controls['email'].hasError('required')">Usuario es requerido.</mat-error>
+                <mat-error *ngIf="formLogin.controls['email'].hasError('email')">Usuario no válido.</mat-error>
+                <mat-error *ngIf="formLogin.controls['email'].hasError('maxlength')">Usuario no puede tener mas de 100 caracteres.</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena"/>
+                <mat-error *ngIf="formLogin.controls['contrasena'].hasError('required')">Contraseña es requerida.</mat-error>
+                <mat-error *ngIf="formLogin.controls['contrasena'].hasError('minlength')">Contraseña debe tener al menos 8 caracteres.</mat-error>
+                <mat-error *ngIf="formLogin.controls['contrasena'].hasError('maxlength')">Contraseña no puede tener mas de 20 caracteres.</mat-error>
+            </mat-form-field>      
+         
+            <div class="acciones">
+                <button class="btnEnviar" mat-raised-button   [disabled] = "!formLogin.valid" type="submit">Acceder</button>
+                <button class="btnRegistrar" mat-raised-button type="button" (click)="registroUsuario()">Regístrate</button>
+            </div>
+        </form>
+    </div>
+</div>

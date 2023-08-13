@@ -1,0 +1,54 @@
+.lineaTitulo {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.lineaTitulo::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #20BCD1;
+    transform: translateX(-50%);
+}
+
+.contenido {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.desplegado {
+    display: block;
+    margin-top: 10px;
+}
+
+.desplegado2 {
+    border: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+
+}
+
+th {
+    background-color: #002060;
+    color: white;
+} 
+
+.texto-negrita {
+    font-weight: bold;
+}
+
+.icon-display {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+}
+.btn:hover {
+    background-color: rgba(128, 128, 128, 0.507);
+  }

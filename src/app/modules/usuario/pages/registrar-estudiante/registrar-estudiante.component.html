@@ -1,0 +1,156 @@
+<form [formGroup]="estudianteForm" class="bg-light px-5 py-4 pt-5" (ngSubmit)="registrarEstudiante(estudianteForm)">
+  <ng-template matStepLabel>Datos Personales</ng-template>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="nombres_estudiante" placeholder="Nombres" required
+          [ngClass]="{'is-invalid': estudianteForm.controls['nombres_estudiante'].invalid && (estudianteForm.controls['nombres_estudiante'].dirty || estudianteForm.controls['nombres_estudiante'].touched || submitted)}">
+        <label for="nombres_estudiante">Nombres</label>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['nombres_estudiante'].invalid && (estudianteForm.controls['nombres_estudiante'].dirty || estudianteForm.controls['nombres_estudiante'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="apellidos_estudiante" placeholder="Apellidos" required
+          [ngClass]="{'is-invalid': estudianteForm.controls['apellidos_estudiante'].invalid && (estudianteForm.controls['apellidos_estudiante'].dirty || estudianteForm.controls['apellidos_estudiante'].touched || submitted)}">
+        <label for="apellidos_estudiante">Apellidos</label>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['apellidos_estudiante'].invalid && (estudianteForm.controls['apellidos_estudiante'].dirty || estudianteForm.controls['apellidos_estudiante'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="cedula_estudiante" placeholder="Cédula" required
+          [ngClass]="{'is-invalid': estudianteForm.controls['cedula_estudiante'].invalid && (estudianteForm.controls['cedula_estudiante'].dirty || estudianteForm.controls['cedula_estudiante'].touched || submitted)}">
+        <label for="cedula_estudiante">Cédula</label>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['cedula_estudiante'].invalid && (estudianteForm.controls['cedula_estudiante'].dirty || estudianteForm.controls['cedula_estudiante'].touched || submitted)">
+          <div *ngIf="estudianteForm.controls['cedula_estudiante'].hasError('required')">Campo obligatorio.</div>
+          <div *ngIf="estudianteForm.controls['cedula_estudiante'].hasError('pattern')">La cédula debe contener solo
+            números.</div>
+          <div *ngIf="estudianteForm.controls['cedula_estudiante'].hasError('maxlength')">La cédula debe tener una
+            longitud máxima de 10 dígitos.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="fechaNacimiento_estudiante"
+          placeholder="Fecha de nacimiento (YYYY-MM-DD)" required
+          [ngClass]="{'is-invalid': estudianteForm.controls['fechaNacimiento_estudiante'].invalid && (estudianteForm.controls['fechaNacimiento_estudiante'].dirty || estudianteForm.controls['fechaNacimiento_estudiante'].touched || submitted)}">
+        <label for="fechaNacimiento_estudiante">Fecha de nacimiento</label>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['fechaNacimiento_estudiante'].invalid && (estudianteForm.controls['fechaNacimiento_estudiante'].dirty || estudianteForm.controls['fechaNacimiento_estudiante'].touched || submitted)">
+          <div *ngIf="estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaRequerida')">Campo
+            obligatorio.
+          </div>
+          <div
+            *ngIf="estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaPatron') && !estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaRequerida')">
+            La fecha debe tener el
+            formato YYYY-MM-DD.</div>
+          <div
+            *ngIf="estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaInvalida') && !estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaRequerida') && !estudianteForm.controls['fechaNacimiento_estudiante'].hasError('fechaPatron')">
+            La fecha no es
+            válida.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="direccion_estudiante" placeholder="Dirección" required
+          [ngClass]="{'is-invalid': estudianteForm.controls['direccion_estudiante'].invalid && (estudianteForm.controls['direccion_estudiante'].touched || submitted)}">
+        <label for="direccion_estudiante">Dirección</label>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['direccion_estudiante'].invalid && (estudianteForm.controls['direccion_estudiante'].dirty || estudianteForm.controls['direccion_estudiante'].touched || submitted)">
+          <div *ngIf="estudianteForm.controls['direccion_estudiante'].hasError('required')">
+            Campo obligatorio.
+          </div>
+          <div *ngIf="estudianteForm.controls['direccion_estudiante'].hasError('maxlength')">
+            La dirección no debe exceder los 100 caracteres.
+          </div>
+        </div>
+        <div class="invalid-feedback"
+          *ngIf="estudianteForm.controls['direccion_estudiante'].invalid && (estudianteForm.controls['direccion_estudiante'].touched || submitted)">
+          <div
+            *ngIf="estudianteForm.controls['direccion_estudiante'].hasError('required') && (estudianteForm.controls['direccion_estudiante'].dirty || estudianteForm.controls['direccion_estudiante'].touched)">
+            Campo obligatorio.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="exampleFormControlFile1">
+            <label class="custom-file-label" for="exampleFormControlFile1"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input class="form-control" id="telefono_estudiante" name="telefono_estudiante" placeholder="Teléfono" required
+          type="tel" formControlName="telefono_estudiante"
+          [ngClass]="{'is-invalid': (submitted || estudianteForm.controls['telefono_estudiante'].touched) && estudianteForm.controls['telefono_estudiante'].invalid}">
+        <label for="telefono_estudiante">Teléfono</label>
+        <div class="invalid-feedback"
+          *ngIf="(submitted || estudianteForm.controls['telefono_estudiante'].touched) && estudianteForm.controls['telefono_estudiante'].invalid">
+          Campo obligatorio y debe contener solo números de hasta 10 dígitos.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="email_estudiante" name="email_estudiante" placeholder="Correo Electrónico"
+          required type="email" formControlName="email_estudiante"
+          [ngClass]="{'is-invalid': (submitted || estudianteForm.controls['email_estudiante'].touched) && estudianteForm.controls['email_estudiante'].invalid}">
+        <label for="email_estudiante">Correo Electrónico</label>
+        <div class="invalid-feedback"
+          *ngIf="(submitted || estudianteForm.controls['email_estudiante'].touched) && estudianteForm.controls['email_estudiante'].invalid">
+          Campo obligatorio y debe ser una dirección de correo electrónico válida.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" id="nivelEducacion_estudiante" name="nivelEducacion_estudiante" required
+          formControlName="nivelEducacion_estudiante"
+          [ngClass]="{'is-invalid': (submitted || estudianteForm.controls['nivelEducacion_estudiante'].touched) && estudianteForm.controls['nivelEducacion_estudiante'].invalid}">
+          <option value="">Seleccione una opción</option>
+          <option *ngFor="let opcion of opcionesNivelEducacion" [value]="opcion.texto">{{ opcion.texto }}</option>
+        </select>
+        <label for="nivelEducacion_estudiante">Nivel de Educación</label>
+        <div class="invalid-feedback"
+          *ngIf="(submitted || estudianteForm.controls['nivelEducacion_estudiante'].touched) && estudianteForm.controls['nivelEducacion_estudiante'].invalid">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="promedioAnterior_estudiante" name="promedioAnterior_estudiante"
+          placeholder="Promedio Anterior" required type="number" step="0.01"
+          formControlName="promedioAnterior_estudiante"
+          [ngClass]="{'is-invalid': (estudianteForm.controls['promedioAnterior_estudiante'].invalid && estudianteForm.controls['promedioAnterior_estudiante'].touched) || (submitted && estudianteForm.controls['promedioAnterior_estudiante'].invalid)}">
+        <label for="promedioAnterior_estudiante">Promedio Anterior</label>
+        <div class="invalid-feedback"
+          *ngIf="(estudianteForm.controls['promedioAnterior_estudiante'].invalid && (estudianteForm.controls['promedioAnterior_estudiante'].dirty || estudianteForm.controls['promedioAnterior_estudiante'].touched)) || (submitted && estudianteForm.controls['promedioAnterior_estudiante'].invalid)">
+          El campo "Promedio Anterior" es obligatorio y debe ser un número del 1 al 10.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-control" id="medio_estudiante" name="medio_estudiante" formControlName="medio_estudiante"
+          [ngClass]="{'is-invalid': (estudianteForm.controls['medio_estudiante'].invalid && estudianteForm.controls['medio_estudiante'].touched) || (submitted && estudianteForm.controls['medio_estudiante'].invalid)}">
+          <option value="">Selecciona un medio</option>
+          <option value="1">Radio</option>
+          <option value="2">TV</option>
+          <option value="3">Periódico</option>
+          <option value="4">Volantes</option>
+          <option value="5">WhatsApp</option>
+          <option value="6">Redes Sociales</option>
+        </select>
+        <label for="medio_estudiante">Medio</label>
+        <div class="invalid-feedback"
+          *ngIf="(estudianteForm.controls['medio_estudiante'].invalid && (estudianteForm.controls['medio_estudiante'].dirty || estudianteForm.controls['medio_estudiante'].touched)) || (submitted && estudianteForm.controls['medio_estudiante'].invalid)">
+          El campo "Medio" es obligatorio.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-1">
+    <button class="btn btn-outline-primary mx-2  rounded-0" id="botonCancelar" matStepperPrevious>
+      Regresar
+    </button>
+    <button class="btn btn-primary mx-2 rounded-0" id="botonGuardar" type="submit">Registrarse</button>
+  </div>
+</form>

@@ -1,0 +1,29 @@
+<div style="padding: 40px;">
+  <div style="width: 80%; margin: auto; text-align: center;">
+    <h1> ACTIVIDADES CUMPLIDAS </h1>
+  </div>
+  <mat-dialog-content>
+    <div>
+      <table mat-table [dataSource]="datosActividad" class="mat-elevation-z8">
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="actividad">
+          <th mat-header-cell *matHeaderCellDef> Actividad </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_actividad}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr *matNoDataRow>
+          <td style="padding: 20px;" class="td-notFound" [attr.colspan]="displayedColumns.length">
+            No se encontraron resultados.
+          </td>
+        </tr>
+      </table>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="pagos" style=" margin:0 auto; background-color:
+ black; color: white;" mat-button (click)="cerrar()">CERRAR</button>
+  </mat-dialog-actions>
+</div>

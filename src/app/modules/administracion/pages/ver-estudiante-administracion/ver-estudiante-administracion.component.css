@@ -1,0 +1,38 @@
+th {
+    background-color: black !important;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+td{
+    text-align: center
+}
+.vdc{
+    background-color: #F0F0F0;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+.vdh{
+    background-color: #F0F0F0;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contenidoEstudiante{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.pagos {
+    font-weight: bold;
+    padding: 0px;
+    border-radius: 0px;
+    width: 120px;
+}

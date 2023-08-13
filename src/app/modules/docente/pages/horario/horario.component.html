@@ -1,0 +1,68 @@
+<div class ="container">
+
+    <br><br>
+  
+      <h1>MI HORARIO</h1>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+        <ng-container matColumnDef="nombre_materia">
+          <th mat-header-cell *matHeaderCellDef>Materia</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_materia}} </td>
+        </ng-container>          
+     
+        <ng-container matColumnDef="modulo_materia">
+          <th mat-header-cell *matHeaderCellDef>Módulo</th>
+          <td mat-cell *matCellDef="let element"> {{element.modulo_materia}} </td>
+        </ng-container>            
+  
+        <ng-container matColumnDef="nombre_paralelo">
+          <th mat-header-cell *matHeaderCellDef>Paralelo</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_paralelo}} </td>
+        </ng-container>
+
+              
+        <ng-container matColumnDef="dia_horario1">
+          <th mat-header-cell *matHeaderCellDef>Lunes</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[0].hora_horario}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="dia_horario2">
+          <th mat-header-cell *matHeaderCellDef>Martes</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[1].hora_horario}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="dia_horario3">
+          <th mat-header-cell *matHeaderCellDef>Miercoles</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[2].hora_horario}} </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="dia_horario4">
+          <th mat-header-cell *matHeaderCellDef>Jueves</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[3].hora_horario}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dia_horario5">
+          <th mat-header-cell *matHeaderCellDef>Viernes</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[4].hora_horario}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="dia_horario6">
+          <th mat-header-cell *matHeaderCellDef>Sábado</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[5].hora_horario}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dia_horario7">
+          <th mat-header-cell *matHeaderCellDef>Domingo</th>
+          <td mat-cell *matCellDef="let element"> {{element.horario_ordenado[6].hora_horario}} </td>
+        </ng-container>
+  
+  
+        
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+     
+  </div>
+        
+        

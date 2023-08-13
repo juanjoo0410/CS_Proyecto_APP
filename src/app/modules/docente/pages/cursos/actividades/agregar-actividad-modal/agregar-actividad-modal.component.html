@@ -1,0 +1,76 @@
+<div class="modal-body">
+    <div class="text-center pt-4">
+        <h1 class="modal-title font-weight-bold">NUEVA ACTIVIDAD</h1>
+    </div>
+
+    <form id="addUserForm" [formGroup]="actividadForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group pb-2 mx-5">
+            <label for="nombre" class="form-label mt-3" id="nombreLabel">Nombre</label>
+            <input type="text" class="form-control rounded-0" id="nombre" formControlName="nombre_actividad" [ngClass]="{ 'is-invalid': submitted && f['nombre_actividad'].errors }">
+            <div class="invalid-feedback" *ngIf="submitted && f['nombre_actividad'].errors">
+                <div *ngIf="f['nombre_actividad'].errors['required']">El nombre es obligatorio.</div>
+                <div *ngIf="f['nombre_actividad'].errors['pattern']">El nombre no debe contener números ni caracteres especiales.</div>
+            </div>
+        </div>
+
+        <div class="form-group pb-2 mx-5">
+            <label for="descripcion" class="form-label mt-3" id="descripcionLabel">Descripción</label>
+            <textarea class="form-control rounded-0" id="descripcion" formControlName="descripcion_actividad"
+                [ngClass]="{ 'is-invalid': submitted && f['descripcion_actividad'].errors }"></textarea>
+            <div class="invalid-feedback" *ngIf="submitted && f['descripcion_actividad'].errors">
+                <div *ngIf="f['descripcion_actividad'].errors['required']">La descripción es obligatoria.</div>
+            </div>
+        </div>
+
+        <div class="form-group pb-2 mx-5">
+            <label for="fechaVencimiento" class="form-label mt-3" id="fechaVencimientoLabel">Fecha de
+                Vencimiento</label>
+            <mat-form-field class="mat-form-field invalid-input" [ngClass]="{ 'is-invalid': submitted && f['fechaVencimiento_actividad'].invalid }">
+                <input matInput [matDatepicker]="myDatepicker" class="form-control" id="fechaVencimiento" formControlName="fechaVencimiento_actividad" [ngClass]="{ 'is-invalid': submitted && f['fechaVencimiento_actividad'].errors }" readonly>
+
+                <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #myDatepicker></mat-datepicker>
+            </mat-form-field>
+            <div class="invalid-feedback d-block" *ngIf="submitted && f['fechaVencimiento_actividad'].errors">
+                <div *ngIf="f['fechaVencimiento_actividad'].errors['required']">La fecha de vencimiento es obligatoria.</div>
+                <div *ngIf="f['fechaVencimiento_actividad'].errors['fechaInvalida']">La fecha de vencimiento debe ser mayor a la actual.</div>
+            </div>
+        </div>
+
+        <div class="form-group pb-2 mx-5">
+            <label for="tipoActividad" class="form-label mt-3" id="tipoActividadLabel">Tipo de Actividad</label>
+            <select class="form-select rounded-0" formControlName="tipo_actividad" id="tipoActividad"  [ngClass]="{ 'is-invalid': submitted && f['tipo_actividad'].errors }">
+                <option value="" selected>Seleccionar</option>
+                <option value="Tarea">Tarea</option>
+                <option value="Examen final">Examen final</option>
+                <option value="Examen de recuperación">Examen de recuperación</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="submitted && f['tipo_actividad'].errors">
+                <div *ngIf="f['tipo_actividad'].errors['required']">El tipo de actividad es obligatorio.</div>
+            </div>
+        </div>
+
+        <div class="form-group pb-2 mx-5">
+            <label for="email" class="form-label mt-3">Tipo de Archivo</label>
+            <select class="form-select rounded-0" formControlName="archivosPermitidos_actividad"
+                id="archivosPermitidos" [ngClass]="{ 'is-invalid': submitted && f['archivosPermitidos_actividad'].errors }">
+                <option value="" selected>Seleccionar</option>
+                <option value=".TXT">Archivo de texto (.txt)</option>
+                <option value=".DOCX">Word (.docx)</option>
+                <option value=".PDF">Documento PDF (.pdf)</option>
+                <option value=".PPT">PowerPoint (.ppt)</option>
+                <option value=".PNG">Imagen (.png)</option>
+                <option value=".JPG">Imagen (.jpg)</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="submitted && f['archivosPermitidos_actividad'].errors">
+                <div *ngIf="f['archivosPermitidos_actividad'].errors['required']">El tipo de archivo es obligatorio.</div>
+            </div>        </div>
+
+        <div class="d-flex justify-content-center pt-4 pb-2">
+            <button type="submit" id="botonGuardar" class="btn btn-primary mx-1 rounded-0" type="submit"
+                form="addUserForm">Guardar</button>
+            <button type="submit" id="botonCancelar" class="btn btn-outline-primary mx-1  rounded-0"
+                (click)="activeModal.close()" form="addUserForm">Cancelar</button>
+        </div>
+    </form>
+</div>

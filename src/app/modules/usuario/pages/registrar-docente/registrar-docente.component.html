@@ -1,0 +1,126 @@
+<form [formGroup]="docenteForm" class="bg-light px-5 py-4 pt-5" (ngSubmit)="registrarDocente(docenteForm)">
+  <ng-template matStepLabel>Datos Personales</ng-template>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="nombres_docente" placeholder="Nombres" required
+          [ngClass]="{'is-invalid': docenteForm.controls['nombres_docente'].invalid && (docenteForm.controls['nombres_docente'].touched || submitted)}">
+        <label for="nombres_docente">Nombres</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['nombres_docente'].invalid && (docenteForm.controls['nombres_docente'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="apellidos_docente" placeholder="Apellidos" required
+          [ngClass]="{'is-invalid': docenteForm.controls['apellidos_docente'].invalid && (docenteForm.controls['apellidos_docente'].touched || submitted)}">
+        <label for="apellidos_docente">Apellidos</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['apellidos_docente'].invalid && (docenteForm.controls['apellidos_docente'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="cedula_docente" placeholder="Cédula" required
+          [ngClass]="{'is-invalid': docenteForm.controls['cedula_docente'].invalid && (docenteForm.controls['cedula_docente'].touched || submitted)}">
+        <label for="cedula_docente">Cédula</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['cedula_docente'].invalid && (docenteForm.controls['cedula_docente'].touched || submitted)">
+          <div *ngIf="docenteForm.controls['cedula_docente'].hasError('required')">Campo obligatorio.</div>
+          <div *ngIf="docenteForm.controls['cedula_docente'].hasError('pattern')">La cédula debe tener entre 1 y 10
+            dígitos numéricos.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="fechaNacimiento_docente"
+          placeholder="Fecha de nacimiento (YYYY-MM-DD)" required
+          [ngClass]="{'is-invalid': docenteForm.controls['fechaNacimiento_docente'].invalid && (docenteForm.controls['fechaNacimiento_docente'].touched || submitted)}">
+        <label for="fechaNacimiento_docente">Fecha de nacimiento</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['fechaNacimiento_docente'].invalid && (docenteForm.controls['fechaNacimiento_docente'].dirty || docenteForm.controls['fechaNacimiento_docente'].touched || submitted)">
+          <div *ngIf="docenteForm.controls['fechaNacimiento_docente'].hasError('fechaRequerida')">Campo obligatorio.
+          </div>
+          <div
+            *ngIf="docenteForm.controls['fechaNacimiento_docente'].hasError('fechaPatron') && !docenteForm.controls['fechaNacimiento_docente'].hasError('fechaRequerida')">
+            La fecha debe tener el
+            formato YYYY-MM-DD.</div>
+          <div
+            *ngIf="docenteForm.controls['fechaNacimiento_docente'].hasError('fechaInvalida') && !docenteForm.controls['fechaNacimiento_docente'].hasError('fechaRequerida') && !docenteForm.controls['fechaNacimiento_docente'].hasError('fechaPatron')">
+            La fecha no es
+            válida.</div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="direccion_docente" placeholder="Dirección" required
+          [ngClass]="{'is-invalid': docenteForm.controls['direccion_docente'].invalid && (docenteForm.controls['direccion_docente'].touched || submitted)}">
+        <label for="direccion_docente">Dirección</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['direccion_docente'].invalid && (docenteForm.controls['direccion_docente'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input class="form-control" id="telefono_docente" name="telefono_docente" placeholder="Teléfono" required
+          type="tel" formControlName="telefono_docente"
+          [ngClass]="{'is-invalid': docenteForm.controls['telefono_docente'].invalid && (docenteForm.controls['telefono_docente'].touched || submitted)}">
+        <label for="telefono_docente">Teléfono</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['telefono_docente'].invalid && (docenteForm.controls['telefono_docente'].dirty || docenteForm.controls['telefono_docente'].touched || submitted)">
+          <div *ngIf="docenteForm.controls['telefono_docente'].hasError('required')">
+            Campo obligatorio.
+          </div>
+          <div *ngIf="docenteForm.controls['telefono_docente'].hasError('pattern')">
+            El número de teléfono debe contener solo números y tener una longitud máxima de 10 dígitos.
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="email_docente" name="email_docente" placeholder="Correo Electrónico" required
+          type="email" formControlName="email_docente"
+          [ngClass]="{'is-invalid': docenteForm.controls['email_docente'].invalid && (docenteForm.controls['email_docente'].touched || submitted)}">
+        <label for="email_docente">Correo Electrónico</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['email_docente'].invalid && (docenteForm.controls['email_docente'].dirty || docenteForm.controls['email_docente'].touched || submitted)">
+          <div *ngIf="docenteForm.controls['email_docente'].hasError('required')">
+            Campo obligatorio.
+          </div>
+          <div *ngIf="docenteForm.controls['email_docente'].hasError('email')">
+            El correo electrónico no tiene un formato válido.
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="titulo_docente" name="titulo_docente" placeholder="Titulo" required type="text"
+          formControlName="titulo_docente"
+          [ngClass]="{'is-invalid': docenteForm.controls['titulo_docente'].invalid && (docenteForm.controls['titulo_docente'].touched || submitted)}">
+        <label for="titulo_docente">Titulo</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['titulo_docente'].invalid && (docenteForm.controls['titulo_docente'].dirty || docenteForm.controls['titulo_docente'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" id="nivelEducacion_docente" name="nivelEducacion_docente"
+          placeholder="Nivel de Educación" required formControlName="nivelEducacion_docente"
+          [ngClass]="{'is-invalid': docenteForm.controls['nivelEducacion_docente'].invalid && (docenteForm.controls['nivelEducacion_docente'].touched || submitted)}">
+          <option value="" selected>Nivel de Educación</option>
+          <option value="3er nivel">3er nivel</option>
+          <option value="4to nivel">4to nivel</option>
+        </select>
+        <label for="nivelEducacion_docente">Nivel de Educación</label>
+        <div class="invalid-feedback"
+          *ngIf="docenteForm.controls['nivelEducacion_docente'].invalid && (docenteForm.controls['nivelEducacion_docente'].dirty || docenteForm.controls['nivelEducacion_docente'].touched || submitted)">
+          Campo obligatorio.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-1">
+    <button class="btn btn-outline-primary mx-2  rounded-0" id="botonCancelar" matStepperPrevious>
+      Regresar
+    </button>
+    <button class="btn btn-primary mx-2 rounded-0" id="botonGuardar" type="submit">Registrarse</button>
+  </div>
+</form>

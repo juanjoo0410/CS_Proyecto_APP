@@ -1,0 +1,47 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.labels {
+    font-size: 11px
+}
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+
+}
+button{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.btnContrasena{
+    background-color: black !important;
+    color: white !important;
+}
+.mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+table td, table th {
+    text-align: center;
+}
+th{
+    background-color: #192A51 !important;
+    color: white;
+    text-align: center; 
+}
+mat-expansion-panel-header{
+    background-color: #E6E6E6 !important;
+}

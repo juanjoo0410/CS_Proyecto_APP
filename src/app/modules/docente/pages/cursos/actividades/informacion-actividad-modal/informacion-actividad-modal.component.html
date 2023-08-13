@@ -1,0 +1,19 @@
+<div class="modal-body">
+    <div class="mx-3 mt-4">
+        <h2 class="texto-negrita my-2">{{actividad.nombre_actividad}}</h2>
+        <h3 class="texto-negrita my-2">Publicado: <span class="texto-normal">{{actividad.fechaPublicacion_actividad}}</span></h3>
+        <h3 class="texto-negrita my-2">Vencimiento: <span class="texto-normal">{{actividad.fechaVencimiento_actividad}}</span></h3>
+        <hr class="my-4">
+        <p class="descripcion">{{actividad.descripcion_actividad}}</p>
+
+            <hr class="my-4">
+        <h3 class="texto-negrita my-2">Tipo de archivo permitido: <span class="texto-normal">{{actividad.archivosPermitidos_actividad}}</span></h3>
+        <h3 class="texto-negrita my-2">Envíos: <span class="texto-normal">{{actividad.envios}}</span></h3>
+        <div class="d-flex justify-content-center pt-4 pb-3">
+            <button type="submit" id="botonGuardar" class="btn btn-primary mx-1 rounded-0" type="submit" (click)="activeModal.close()"
+                form="addUserForm">Cerrar</button>
+        </div>
+    </div>
+
+
+</div>

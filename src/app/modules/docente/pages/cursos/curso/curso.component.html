@@ -1,0 +1,26 @@
+<div class="container-fluid px-5 pt-4 ">
+    <h4>Mis Cursos / {{curso.nombre_materia}} - {{curso.nombre_paralelo}} / Actividades</h4>
+    <div class="d-flex justify-content-between">
+        <div>
+            <h1 class="texto-negrita">{{curso.nombre_materia}} - {{curso.nombre_paralelo}}</h1>
+        </div>
+        <div>
+            <button type="button" class="btn btn-white btn-block rounded-0 border-2 border-bottom justify-content-end"
+            [ngClass]="{'texto-negrita': opcionSeleccionada === 'actividades', 'btn-light': opcionSeleccionada === 'actividades'}"
+            (click)="seleccionarOpcion('actividades'); goActividades()">Actividades</button>
+            
+            <button type="button" class="btn btn-white btn-block rounded-0 border-2 border-bottom justify-content-end"
+            [ngClass]="{'texto-negrita': opcionSeleccionada === 'asistencias', 'btn-light': opcionSeleccionada === 'asistencias'}"
+                (click)="seleccionarOpcion('asistencias'); goAsistencias()">Asistencias</button>
+            
+            <button type="button" class="btn btn-white btn-block rounded-0 border-2 border-bottom justify-content-end"
+            [ngClass]="{'texto-negrita': opcionSeleccionada === 'calificaciones', 'btn-light': opcionSeleccionada === 'calificaciones'}"
+                (click)="seleccionarOpcion('calificaciones'); goCalificaciones()">Calificaciones</button>
+
+            <button type="button" class="btn btn-white btn-block rounded-0 border-2 border-bottom justify-content-end"
+            [ngClass]="{'texto-negrita': opcionSeleccionada === 'participantes', 'btn-light': opcionSeleccionada === 'participantes'}"
+                (click)="seleccionarOpcion('participantes'); goParticipantes()">Participantes</button>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

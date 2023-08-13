@@ -1,0 +1,96 @@
+<div class="fondoNavBar">
+  
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="navbar border-bottom" *ngIf="usuario.rol_usuario === 0 || !usuario.rol_usuario">
+    <a class="navbar-brand my-0" href=""><i class="bi bi-book-half"></i> Centro Artesanal UG</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-between mx-3" id="navbarNav">
+    <div>
+      <!--Pagina Inicial-->
+      <ul class="navbar-nav" *ngIf="usuario.rol_usuario === 0 || !usuario.rol_usuario">
+        <li class="nav-item p-2 px-3">
+          <a class="nav-link" routerLink="/home" routerLinkActive="activeLink">INICIO</a>
+        </li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irEstudiante()" id="estudianteDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ESTUDIANTES</a></li>
+        <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irDocente()" id="docenteDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DOCENTES</a></li>
+        <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irCalidad()" id="calidadDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CALIDAD</a></li>
+      </ul>
+
+      <!--Admin-->
+      <ul class="navbar-nav" *ngIf="usuario.rol_usuario === 3">
+        <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irAdmin()" id="adminDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMINISTRACIÓN</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irAdminEstudiante()" id="estudiantesDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ESTUDIANTES</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irAdminDocente()" id="docentesDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DOCENTES</a></li>
+      </ul>
+
+      <!--Docente-->
+      <ul class="navbar-nav" *ngIf="usuario.rol_usuario === 2">
+        <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irDocenteHorario()" id="horarioDocDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HORARIOS</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irDocenteCursos()" id="cursosDocDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CURSOS</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irDocenteActa()" id="cursosDocDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ACTAS</a></li>
+      </ul>
+
+      <!--Estudiante-->
+      <ul class="navbar-nav" *ngIf="usuario.rol_usuario === 1">
+        <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irEstudianteHorario()" id="adminDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HORARIOS</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irEstudianteCursos()" id="estudiantesDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CURSOS</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irEstudianteActa()" id="docentesDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CALIFICACIONES</a></li>
+        <li class="nav-item dropdown p-2 px-3" >
+          <a class="nav-link dropdown-toggle" (click)="irEstudianteEvaluacionDocente()" id="docentesDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EVALUACIÓN DOCENTES</a></li>
+       <li class="nav-item dropdown p-2 px-3">
+          <a class="nav-link dropdown-toggle" (click)="irEstudianteMatriculacion()" id="estudianteDropdown" role="button" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATRICULACIÓN</a></li>
+      </ul>
+    </div>
+    <!--Boton Login-->
+    <div>
+      <ul class="navbar-nav">
+        <li *ngIf="!active" class="nav-item">
+          <a routerLink="" routerLinkActive="activeLink" (click)="openDialogSesion()" class="nav-link" style="display: flex; align-items: center;">
+            <img src="./../../../assets/imagen/perfil.png" alt="" width="35px" height="35px">
+          </a>
+        </li>
+        <li *ngIf="active" class="nav-item dropdown p-2">
+          <a class="nav-link dropdown-toggle" href="#" id="usuarioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center;">
+            <span class="mx-2">{{usuario.nombre_usuario}}</span>
+            <img src="./../../../assets/imagen/perfil.png" alt="" width="35px" height="35px" *ngIf="active">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-left" aria-labelledby="usuarioDropdown">
+            <li><a routerLink="/usuario/mi-cuenta" class="dropdown-item">Perfil</a></li>
+            <li><a href="#" class="dropdown-item" (click)="logout()">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

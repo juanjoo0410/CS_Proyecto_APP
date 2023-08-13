@@ -1,0 +1,111 @@
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+h1,
+p,
+a {
+    line-height: normal;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25pt;
+    margin-bottom: 5px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+h1:before {
+    content: "";
+    position: absolute;
+    width: 36%;
+    bottom: 0;
+    left: 32%;
+    right: 32%;
+    border-bottom: #85e3f0 solid 5px;
+}
+
+.contenido {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.desplegado {
+    display: block;
+    margin-top: 10px;
+}
+
+.desplegado2 {
+    border: 0px;
+}
+
+#botonActividad {
+    background-color: #20BCD1;
+}
+
+#botonActividad:hover {
+    background-color: #1c9cad;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+
+}
+
+th{
+    background-color: #192A51 !important;
+    color: white;
+    text-align: center;
+  
+  
+  }
+  
+    table td, table th {
+        text-align: center;
+      }
+.texto-negrita {
+    font-weight: bold;
+}
+
+.icon-display {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+  }
+
+.Enviada{
+    background-color: #188754;
+    color: white;
+    font-weight: bolder;
+}
+.NoEnviada{
+    background-color: #959D9D;
+    color: white;
+    font-weight: bolder;
+}
+.Pendiente{
+    background-color: #DBD700;
+    color: white;
+    font-weight: bolder;
+}
+
+.NoEnviada, .Enviada, .Pendiente {
+    width: 1% !important; 
+  }
+
+.add {
+    cursor: pointer;
+  }

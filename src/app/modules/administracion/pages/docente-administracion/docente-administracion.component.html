@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="container rounded bg-white">
+    <div class="contenido-encabezado">
+      <section class="cuerpo-titulo">
+        <h1>DOCENTES</h1>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="contenido-tabla">
+  <div class="contenedor-managerTable">
+    <button (click)="mostrarPagos()" class="pagos" style="background-color: black; color: white;"
+      mat-raised-button>PAGOS</button>
+    <div class="contenido-managerTable">
+      <mat-form-field appearance="fill">
+        <mat-label>Filtrar por:</mat-label>
+        <mat-select [(ngModel)]="selectedFiltro">
+          <mat-option *ngFor="let filtro of filtro" [value]="filtro">{{filtro}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="campos-field">
+        <mat-label>Cedula</mat-label>
+        <input matInput >
+      </mat-form-field>
+    </div>
+  </div>
+  <table mat-table [dataSource]="datosDocentes" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_docente}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="cedula">
+      <th mat-header-cell *matHeaderCellDef> Cedula </th>
+      <td mat-cell *matCellDef="let element"> {{element.cedula_docente}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="nombreCompleto">
+      <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombresCompletos_docente}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ciclo">
+      <th mat-header-cell *matHeaderCellDef> Ciclo </th>
+      <td mat-cell *matCellDef="let element"> {{element.ciclo_contrato}}<p *ngIf="element.estado_docente === null">-</p></td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element"> {{element.estado_docente}} <p *ngIf="element.estado_docente === null">Inactivo</p></td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="contrato">
+      <th mat-header-cell *matHeaderCellDef> Contrato </th>
+      <td style="cursor: pointer;"
+        (click)="mostrarDialogoContrato(element.nombresCompletos_docente, element.id_docente)" mat-cell
+        *matCellDef="let element"> {{element.tipo_contrato}} <mat-icon *ngIf="element.estado_docente === null">add</mat-icon> </td>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Evaluacion </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="verMateriasDocente(element.id_docente)" matTooltip="Ver" class="view" fontIcon="visibility">
+        </mat-icon>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
