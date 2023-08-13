@@ -1,5 +1,5 @@
 export const environment = {
-
+    production: true,
     urlBAse: "https://centroartesanal-api.onrender.com",
     pathUrl: {
         urlVerificarUsuarioPassword: "/api/v1/usuarios/verifyUserByUserAndPassword",
@@ -68,9 +68,5 @@ export const environment = {
             urlAgregarOrdenPagoMatriculas: "/api/v1/ordenPagoMatriculas/addOrdenPagoMatriculas",
             urlObtenerOrdenesPago: "/api/v1/ordenPagoMatriculas/getItemOrdenPagoMatriculas",
         }
-        
-
     }
-
-
 }
